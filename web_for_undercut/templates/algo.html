@@ -1,0 +1,60 @@
+<!-- First step: define <div class="form-group"> for each field, with two lines: .label and the field itself. -->
+<!-- Second step: add error-check to each field. -->
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Enter The Input For The Unsercut Algorithm input:</legend>
+
+            <div class="form-group">
+                {{ form.items.label(class="form-control-label") }}
+
+                {% if form.items.errors %}
+                {{ form.items(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.items.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.items(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+
+            <div class="form-group">
+                {{ form.preferences_a.label(class="form-control-label") }}
+                {{ form.preferences_a(class="form-control form-control-lg") }}
+
+            </div>
+
+            <div class="form-group">
+                {{ form.preferences_b.label(class="form-control-label") }}
+
+                {% if form.preferences_b.errors %}
+                {{ form.preferences_b(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.preferences_b.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.preferences_b(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+
+            <div class="form-group">
+                {{ form.algorithm.label(class="form-control-label") }}
+                {{ form.algorithm(class="form-control form-control-lg") }}
+            </div>
+
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}

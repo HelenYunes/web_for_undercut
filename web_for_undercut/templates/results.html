@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"> Undercut Algorithm:</legend>
+            <div class="container">
+                <h2>The allocation is:</h2>
+                <h1 class="blue">{{ algo_out.allocation }}</h1>
+                <h2>For the input:</h2>
+                <h1 class="blue">{{ algo_in.agents}}</h1>
+            </div>
+        </fieldset>
+        <br>
+        <a class="btn-1" href="/input">Try Again</a>
+        <br>
+        <br>
+
+    </form>
+</div>
+{% endblock content %}
