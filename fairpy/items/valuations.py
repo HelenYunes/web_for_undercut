@@ -18,8 +18,6 @@ from numbers import Number
 from collections.abc import Iterable
 import numpy as np
 
-from dicttools import stringify
-
 import math, itertools
 from fractions import Fraction
 
